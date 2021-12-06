@@ -5,7 +5,7 @@ This crate provides an abstract interface for roguelike name generator and some 
 ## ToDo
 
  - [x] Binary Space Partition tree based generator
- - [x] Breadth First Search based generator
+ - [x] Depth First Search based generator
  - [ ] Cellular Automata based generator
  - [ ] Agent Modeling based generator
  - [ ] Generative Grammars based generator
