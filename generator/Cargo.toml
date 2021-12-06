@@ -1,0 +1,10 @@
+[package]
+name = "generator"
+version = "0.1.0"
+edition = "2021"
+authors = ["Katerina Shananina <serpent.k@gmail.com>"]
+
+[dependencies]
+dungeon-models = { path = "../dungeon-models" }
+rand = "0.8.4"
+
