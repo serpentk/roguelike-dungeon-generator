@@ -1,0 +1,10 @@
+[package]
+name = "narrative"
+version = "0.1.0"
+edition = "2021"
+authors = ["Katerina Shananina <serpent.k@gmail.com>"]
+
+[dependencies]
+dungeon-models = { path = "../dungeon-models" }
+itertools = "0.10.3"
+rand = "0.8.4"

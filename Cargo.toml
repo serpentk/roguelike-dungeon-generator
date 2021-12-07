@@ -7,10 +7,12 @@ authors = ["Katerina Shananina <serpent.k@gmail.com>"]
 [dependencies]
 dungeon-models = { path = "dungeon-models" }
 generator = { path = "generator" }
+narrative = { path = "narrative" }
 pancurses = "0.17.0"
 
 [workspace]
 members = [
     "dungeon-models",
     "generator",
+    "narrative",
 ]
