@@ -14,8 +14,8 @@ fn draw_dungeon(dungeon: &Dungeon) {
             match dungeon.map[x][y] {
                 Field::Wall => window.mvprintw(y as i32, x as i32, "#"),
                 Field::Floor => window.mvprintw(y as i32, x as i32, "."),
-                Field::Exit => window.mvprintw(y as i32, x as i32, "*"),
-                Field::Enter => window.mvprintw(y as i32, x as i32, "@"),
+                Field::Exit => window.mvprintw(y as i32, x as i32, ">"),
+                Field::Enter => window.mvprintw(y as i32, x as i32, "<"),
                 _ => window.mvprintw(y as i32, x as i32, "/"),
             };
         }
