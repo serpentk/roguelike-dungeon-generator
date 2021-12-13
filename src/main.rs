@@ -1,6 +1,7 @@
 extern crate pancurses;
 use dungeon_models::{Dungeon, Field};
 use generator::bsp::BSPGenerator;
+use generator::cellular::CellularAutomataGenerator;
 use generator::dfs::DFSGenerator;
 use generator::DungeonBuilder;
 use narrative::dummy::DummyNarrativeBuilder;
@@ -31,6 +32,16 @@ fn main() {
         size_y: 10,
     };
     let mut dungeon = dfs_gen.build();
+    let narrative_builder = DummyNarrativeBuilder {};
+    narrative_builder.fill(&mut dungeon);
+    draw_dungeon(&dungeon);
+    let cellular_gen = CellularAutomataGenerator {
+        size_x: 30,
+        size_y: 30,
+        iterations: 3,
+        wall_probability: 0.45,
+    };
+    let mut dungeon = cellular_gen.build();
     let narrative_builder = DummyNarrativeBuilder {};
     narrative_builder.fill(&mut dungeon);
     draw_dungeon(&dungeon);

@@ -5,4 +5,5 @@ pub trait DungeonBuilder {
 }
 
 pub mod bsp;
+pub mod cellular;
 pub mod dfs;
