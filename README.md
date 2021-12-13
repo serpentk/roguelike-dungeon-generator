@@ -1,6 +1,6 @@
 # roguelike-dungeon-generator
 
-This crate provides an abstract interface for roguelike name generator and some generator implementations
+This crate provides an abstract interface for roguelike dungeon generator and some generator implementations
 
 ## ToDo
 
