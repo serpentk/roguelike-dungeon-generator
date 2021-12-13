@@ -6,7 +6,7 @@ This crate provides an abstract interface for roguelike dungeon generator and so
 
  - [x] Binary Space Partition tree based generator
  - [x] Depth First Search based generator
- - [ ] Cellular Automata based generator
+ - [x] Cellular Automata based generator
  - [ ] Agent Modeling based generator
  - [ ] Generative Grammars based generator
  - [ ] Delaunay Triangulation  and Minimal Spanning Tree based generator from Reddit (maybe it's better not to implement this one)
