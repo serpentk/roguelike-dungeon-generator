@@ -76,7 +76,7 @@ fn step(d: &mut Dungeon) {
                     Field::Wall => acc + 1,
                     _ => acc,
                 });
-            if r1 >= 5 || r2 < 2 {
+            if r1 >= 5 || r1 + r2 < 2 {
                 new_map[x][y] = Field::Wall;
             } else {
                 new_map[x][y] = Field::Floor;

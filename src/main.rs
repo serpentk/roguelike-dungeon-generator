@@ -28,26 +28,26 @@ fn draw_dungeon(dungeon: &Dungeon) {
 
 fn main() {
     let dfs_gen = DFSGenerator {
-        size_x: 10,
-        size_y: 10,
+        size_x: 16,
+        size_y: 16,
     };
     let mut dungeon = dfs_gen.build();
     let narrative_builder = DummyNarrativeBuilder {};
     narrative_builder.fill(&mut dungeon);
     draw_dungeon(&dungeon);
     let cellular_gen = CellularAutomataGenerator {
-        size_x: 30,
-        size_y: 30,
-        iterations: 3,
-        wall_probability: 0.45,
+        size_x: 50,
+        size_y: 50,
+        iterations: 10,
+        wall_probability: 0.5,
     };
     let mut dungeon = cellular_gen.build();
     let narrative_builder = DummyNarrativeBuilder {};
     narrative_builder.fill(&mut dungeon);
     draw_dungeon(&dungeon);
     let bsp_gen = BSPGenerator {
-        size_x: 30,
-        size_y: 30,
+        size_x: 50,
+        size_y: 50,
         split_size: 15,
         wall_size: 2,
     };
