@@ -5,3 +5,4 @@ pub trait NarrativeBuilder {
 }
 
 pub mod dummy;
+pub mod longpath;

@@ -4,7 +4,8 @@ use generator::bsp::BSPGenerator;
 use generator::cellular::CellularAutomataGenerator;
 use generator::dfs::DFSGenerator;
 use generator::DungeonBuilder;
-use narrative::dummy::DummyNarrativeBuilder;
+//use narrative::dummy::DummyNarrativeBuilder;
+use narrative::longpath::LongPathNarrativeBuilder;
 use narrative::NarrativeBuilder;
 
 fn draw_dungeon(dungeon: &Dungeon) {
@@ -32,7 +33,8 @@ fn main() {
         size_y: 16,
     };
     let mut dungeon = dfs_gen.build();
-    let narrative_builder = DummyNarrativeBuilder {};
+    //let narrative_builder = DummyNarrativeBuilder {};
+    let narrative_builder = LongPathNarrativeBuilder {};
     narrative_builder.fill(&mut dungeon);
     draw_dungeon(&dungeon);
     let cellular_gen = CellularAutomataGenerator {
@@ -42,7 +44,8 @@ fn main() {
         wall_probability: 0.5,
     };
     let mut dungeon = cellular_gen.build();
-    let narrative_builder = DummyNarrativeBuilder {};
+    //let narrative_builder = DummyNarrativeBuilder {};
+    let narrative_builder = LongPathNarrativeBuilder {};
     narrative_builder.fill(&mut dungeon);
     draw_dungeon(&dungeon);
     let bsp_gen = BSPGenerator {
@@ -52,7 +55,8 @@ fn main() {
         wall_size: 2,
     };
     let mut dungeon = bsp_gen.build();
-    let narrative_builder = DummyNarrativeBuilder {};
+    //let narrative_builder = DummyNarrativeBuilder {};
+    let narrative_builder = LongPathNarrativeBuilder {};
     narrative_builder.fill(&mut dungeon);
     draw_dungeon(&dungeon);
 }
