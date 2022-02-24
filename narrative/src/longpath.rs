@@ -27,8 +27,8 @@ impl NarrativeBuilder for LongPathNarrativeBuilder {
                 .clone()
                 .into_iter()
                 .filter(|&(x, y)| {
-                    (passed.get(&(x, y)).is_none()
-                        && last.iter().any(|(a, b)| is_neighbor((x, y), (*a, *b))))
+                    passed.get(&(x, y)).is_none()
+                        && last.iter().any(|(a, b)| is_neighbor((x, y), (*a, *b)))
                 })
                 .collect();
         }

@@ -62,8 +62,8 @@ fn r_n(x: usize, y: usize, n: usize, size_x: usize, size_y: usize) -> Vec<(usize
 
 fn step(d: &mut Dungeon) {
     let mut new_map: Vec<Vec<Field>> = vec![vec![Default::default(); d.size_x]; d.size_y];
-    for x in 1..(d.size_x - 1) {
-        for y in 1..(d.size_y - 1) {
+    for (x, col) in new_map.iter_mut().enumerate().take(d.size_x - 1).skip(1) {
+        for (y, field) in col.iter_mut().enumerate().take(d.size_y - 1).skip(1) {
             let r1 = r_n(x, y, 1, d.size_x, d.size_y)
                 .into_iter()
                 .fold(0, |acc, (i, j)| match d.map[i][j] {
@@ -77,15 +77,18 @@ fn step(d: &mut Dungeon) {
                     _ => acc,
                 });
             if r1 >= 5 || r1 + r2 < 2 {
-                new_map[x][y] = Field::Wall;
+                *field = Field::Wall;
             } else {
-                new_map[x][y] = Field::Floor;
+                *field = Field::Floor;
             }
         }
     }
-    for x in 0..d.size_x {
-        for y in 0..d.size_y {
-            d.map[x][y] = new_map[x][y];
-        }
+    for (dst, src) in d
+        .map
+        .iter_mut()
+        .flat_map(|r| r.iter_mut())
+        .zip(new_map.iter().flat_map(|r| r.iter()))
+    {
+        *dst = *src;
     }
 }
